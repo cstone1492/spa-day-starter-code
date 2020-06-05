@@ -81,6 +81,14 @@ public class SpaDayController {
                 appropriateFacials.add(facials.get(i));
             }
         }
+        model.addAttribute("appropriateFacials", appropriateFacials);
+
+        String userName = name;
+        model.addAttribute("name", userName);
+        String userSkinType = skintype;
+        model.addAttribute("skintype", userSkinType);
+        String userManipedi = manipedi;
+        model.addAttribute("manipedi", userManipedi);
 
         return "menu";
     }

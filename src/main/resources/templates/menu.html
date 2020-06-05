@@ -8,8 +8,33 @@
 <body>
 <h1>My Super Fancy Spa</h1>
 <div id = "clientProfile">
+    <h2>My Profile</h2>
+        <p th:text="${name}">Name goes here</p>
+        <p th:text="${skintype}">Skintype goes here</p>
+        <p th:text="${manipedi}">manipedi goes here</p>
 </div>
-<div id = "servicesMenu">
+<div id = "appropriateFacials">
+    <table>
+        <tr>
+            <th>Appropriate Facials</th>
+        </tr>
+        <th:block th:each = "facial : ${appropriateFacials}">
+        <tr>
+            <td th:text="${facial}">a facial goes here</td>
+        </tr>
+        </th:block>
+
+    </table>
+</div>
+<div name = "servicesMenu">
+    <div th:if = "${manipedi == manicure}">
+        <h3>Manicure: </h3>
+        <p th:fragment = "manicureDescription">Our manicure is a great way to spend 30 minutes of your day! We use shea butter hand cream and the finest gel polish.</p>
+    </div>
+    <div th:if = "${manipedi == pedicure}">
+        <h3>Pedicure: </h3>
+        <p th:fragment = "pedicureDescription">Relax for 45 minutes in pure luxury! Our massage chairs and experienced nail techs are here to get your feet in shape for sandal season!</p>
+    </div>
 </div>
 </body>
 </html>
